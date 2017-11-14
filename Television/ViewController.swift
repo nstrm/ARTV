@@ -189,6 +189,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     private func resetTimer() {
         refreshTimer?.invalidate()
         refreshTimer = nil
+        
+        
     }
     
     func updatePositionFor(_ screen: VirtualScreen) {
@@ -205,6 +207,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     func virtualScreen(at point: CGPoint) -> VirtualScreen?  {
         let hitTestOptions: [SCNHitTestOption: Any] = [.boundingBoxOnly: true]
         let hitTestResults: [SCNHitTestResult] = sceneView.hitTest(point, options: hitTestOptions)
+        
         
         return hitTestResults.lazy.flatMap { result in
             self.isNodePartOfVirtualScreen(result.node)

@@ -11,12 +11,26 @@ import SceneKit
 import AVKit
 import SpriteKit
 
+enum test {
+    case abc
+    case xyz
+}
+
 public class VirtualScreen: SCNNode {
+    
+
     
     var moveScreenTranslationTransform: simd_float4x4?
     var videoPlayer: AVPlayer
     
     init(_ videoPlayer: AVPlayer) {
+        
+        let v: test
+        
+        v = .abc
+        if v == .xyz {
+            NSLog("xyz")
+        }
         
         self.videoPlayer = videoPlayer
         super.init()        
